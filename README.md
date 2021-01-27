@@ -12,6 +12,6 @@ pip install -r requirements.txt
 ## Run
 Buttons and associated actions are configurable with the env variable CONTROLLER_CONFIG. For instance:
 ```bash
-CONTROLLER_CONFIG='{"start":"date", "stop":"echo STOPPED"}' python main.py
+CONTROLLER_CONFIG='{"port": 8080, "actions": {"start":"date", "stop":"echo STOPPED"}}' python main.py
 ```
-will serve a controller with two buttons (start and stop), each of them triggering a specific command line (`date` and `echo STOPPED`)
+will serve a controller on port `8080` with two buttons (start and stop), each of them triggering a specific command line (`date` and `echo STOPPED`)
