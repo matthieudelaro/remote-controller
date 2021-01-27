@@ -43,5 +43,8 @@ def react_to_trigger(path):
 def send_js(path):
     return send_from_directory('static', path)
 
-if __name__ == '__main__':
+def run():
     app.run(host='0.0.0.0', port=8080, debug=True) # listen for any origin
+
+if __name__ == '__main__':
+    run()
