@@ -5,7 +5,7 @@ from environs import Env
 env = Env()
 env.read_env()
 
-config_string = env.str("CONTROLLER_CONFIG", default='{"test": "date"}')
+config_string = env.str("CONTROLLER_CONFIG", default='{"test": "date", "stop": "echo stop"}')
 config = json.loads(config_string)
 
 app = Flask(__name__, static_url_path='/static')
@@ -20,7 +20,14 @@ def endpoint_controller():
 
 def serve_controller(request):
     """Responds to any HTTP request."""
-    return render_template('controller.html', data={"actions": config.keys()})
+    actions = config.keys()
+    return render_template('controller.html', data={
+        "actions": actions,
+        "style": { "button": {
+            "width": "90%",
+            "height": f"{90/len(actions)}%",
+        }}
+    })
 
 @app.route('/trigger/<path:path>')
 def endpoint_trigger(path):

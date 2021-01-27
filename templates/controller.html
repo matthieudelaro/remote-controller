@@ -3,7 +3,14 @@
     <link rel="shortcut icon" href="#" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <script type = "text/javascript" src = "/static/jquery-3.5.1.min.js"></script>
-    <link href="/static/style.css" rel="stylesheet">
+    <style>
+        button {
+            width: {{ data.style.button.width }};
+            height: {{ data.style.button.height }};
+            margin-top: 10px;
+            font-size: 3em;
+        }
+    </style>
 </head>
 <body>
     {% for action in data.actions %}
@@ -11,11 +18,8 @@
     {% endfor %}
     <script>
         function send_request(action) {
-            // var url = 'request_action/' + action;
             var url = "http://192.168.1.89:8080/trigger/" + action;
             console.log(url);
-            // var Http = new XMLHttpRequest();
-            // Http.open("GET", url);
             $.ajax({
                 type: "GET",
                 url: url,
