@@ -20,5 +20,5 @@ will serve a controller on port `8080` with two buttons (start and stop), each o
 
 Another example:
 ```bash
-CONTROLLER_CONFIG='{"port": 8080, "actions": {"test": "bash test.sh"}}' python main.py
+CONTROLLER_CONFIG='{"port": 8080, "actions": {"ON":"bash actions/track_and_record.sh", "OFF":"bash actions/stop.sh", "TOGGLE": "bash actions/toggle_tracking_and_recording.sh"}}' python main.py
 ```
