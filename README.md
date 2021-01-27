@@ -14,4 +14,6 @@ Buttons and associated actions are configurable with the env variable CONTROLLER
 ```bash
 CONTROLLER_CONFIG='{"port": 8080, "actions": {"start":"date", "stop":"echo STOPPED"}}' python main.py
 ```
-will serve a controller on port `8080` with two buttons (start and stop), each of them triggering a specific command line (`date` and `echo STOPPED`)
+will serve a controller on port `8080` with two buttons (start and stop), each of them triggering a specific command line (`date` and `echo STOPPED`). Buttons will resize automatically to use fill most of the screen.
+
+![Screenshot](https://user-images.githubusercontent.com/2452725/105953664-d2425480-6073-11eb-8e20-bce53b3d338f.png)
